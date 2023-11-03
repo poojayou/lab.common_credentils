@@ -1,0 +1,26 @@
+---
+# defaults file for dree.common_credentials
+lab_common_credentils_openstack_cred_path:    "~/.config/openstack"
+lab_common_credentils_aws_cred_path:          "~/.aws"
+lab_common_credentils_github_pem_path:        "~/.ssh/id_rsa"
+lab_common_credentils_terraform_profile_path: "~"
+
+lab_common_credentils_srv_github_prv_pem: "{{ VAULT_srv_github_private_key }}"
+github_known_hosts_line:                    "{{ VAULT_github_known_hosts_line }}"
+
+# Openstack stuff for clouds.yml
+hos_project_name:         ""
+hos_auth_url:             ""
+hos_username:             "{{ VAULT_hos_username }}"
+hos_password:             "{{ VAULT_hos_password }}"
+hos_user_domain_name:     "Default"
+hos_project_id:           ""
+hos_interface:            "public"
+hos_identity_api_version: "3"
+hos_verify:               "false"
+hos_region:               ""
+
+# AWS stuff and credentials
+aws_region:            us-east-1
+aws_access_key_id:     "{{ VAULT_aws_access_key_id }}"
+aws_secret_access_key: "{{ VAULT_aws_secret_access_key }}"

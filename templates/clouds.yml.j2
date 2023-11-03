@@ -1,0 +1,14 @@
+ansible:
+  use_hostnames: true
+clouds:
+  {{ hos_project_name }}:
+    auth:
+      auth_url: {{ hos_auth_url }}
+      username: {{ hos_username }}
+      password: {{ hos_password }}
+      user_domain_name: {{ hos_user_domain_name|default('Default') }}
+      project_name: {{ hos_project_name }}
+      project_id: {{ hos_project_id }}
+    verify: {{ hos_verify }}
+    identity_api_version: {{ hos_identity_api_version }}
+    region_name: {{ hos_region }}

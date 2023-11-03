@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  vars_files:
+    - secrets.yml
+  roles:
+    - role: lab.common_credentils

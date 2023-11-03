@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: "requirements.yml"
+driver:
+  name: ec2
+lint:
+  name: yamllint
+platforms:
+  - name: instance-lab.common_credentils
+    image: ami-0dbc3d7bc646e8516
+    instance_type: t2.micro
+    vpc_subnet_id: subnet-0dba5468185bc75da
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

@@ -1,0 +1,7 @@
+---
+
+- name: Create profile file for Terraform
+  template:
+    src: terraform_profile.j2
+    dest: "{{ lab_common_credentils_terraform_profile_path }}/terraform_profile"
+    mode: '0600'

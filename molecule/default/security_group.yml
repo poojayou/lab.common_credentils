@@ -1,0 +1,10 @@
+---
+- name: Create security group
+  ec2_group:
+    region: "{{ ec2.region }}"
+    name: "{{ security_group_name }}"
+    description: "{{ security_group_name }}"
+    rules: "{{ security_group_rules }}"
+    rules_egress: "{{ security_group_rules_egress }}"
+    vpc_id: "{{ ec2.vpc }}"
+  register: ec2_security_group

@@ -1,0 +1,3 @@
+molecule/*/.molecule/**
+molecule/*/__pycache__/**
+molecule/*/.pytest_cache/**

@@ -1,0 +1,13 @@
+---
+
+before_script:
+  - virtualenv molecule-ve
+  - source molecule-ve/bin/activate
+  - pip install -r pyrequirements.txt
+  - cp -R /usr/lib64/python2.7/site-packages/selinux molecule-ve/lib/python2.7/site-packages
+
+test:
+  script:
+    - molecule test
+  tags:
+    - lab

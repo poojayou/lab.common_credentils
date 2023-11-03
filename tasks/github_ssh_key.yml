@@ -1,0 +1,22 @@
+---
+
+- name: Ensure ssh path
+  file:
+    state: directory
+    path: "~/.ssh"
+    mode: '0700'
+
+- name: Ensure id_rsa key for gitlab
+  copy:
+    content: "{{ lab_common_credentils_srv_github_prv_pem }}"
+    dest: "{{ lab_common_credentils_github_pem_path }}"
+    mode: '0400'
+  when: lab_common_credentils_srv_github_prv_pem | length > 0
+
+- name: Ensure github in known_hosts
+  lineinfile:
+    state: present
+    create: true
+    path: "~/.ssh/known_hosts"
+    line: "{{ github_known_hosts_line }}"
+    regexp: "^github.com,140.82.112.4"

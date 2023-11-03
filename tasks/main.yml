@@ -1,0 +1,10 @@
+---
+# tasks for lab.common_credentils
+
+- import_tasks: aws_credentils.yml
+  when: slave_aws_iam is not defined
+
+- import_tasks: terraform_profile.yml
+
+- import_tasks: github_ssh_key.yml
+
